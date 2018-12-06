@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<main layout:fragment="content">
+
+    <section>
+        <h1>Currency Converter</h1>
+        <form th:action="@{/convert-currencies}" th:object="${convertCurrencyForm}" method="post">
+            <p class="form"><label for="amount">Amount</label>:
+                <input class="amountInput" type="text"
+                   th:field="*{amount}"
+                   id="amount"/>
+            </p>
+
+            <p><label class="fromFormLabel" for="fromCurrency">From Currency:</label>
+            <select class="form-control" id="fromCurrency" th:field="*{fromCurrencyName}">
+                <option th:each="currency : ${allCurrencies}" th:value="${currency.name}" th:text="${currency.name}"></option>
+            </select>
+            </p>
+
+            <p><label class="toFormLabel" for="toCurrency">To Currency:</label>
+            <select class="form-control" id="toCurrency" th:field="*{toCurrencyName}">
+                <option th:each="currency : ${allCurrencies}" th:value="${currency.name}" th:text="${currency.name}"></option>
+            </select>
+            </p>
+            <p class="result">Result: <span th:text="|${value}|"></span> <span th:text="|${toCurrencyName}|"></span></p>
+            <p class="submit"><input type="submit" value="Convert"/>
+            </p>
+        </form>
+    </section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+    margin: auto;
+    width: 30%;
+    height: 20%;
+    background-color: lightblue;
+    font-family: "Arial", Sans-serif;
+    font-size: 12px;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 20%;
+}
+
+section {
+    margin: auto;
+    width: 60%;
+}
+
+.info{
+    margin-bottom: 20%;
+}
+
+.amountInput{
+    width: 20%;
+    margin-left: 20%;
+}
+
+.fromFormLabel{
+    margin-right: 7%;
+}
+
+.toFormLabel{
+    margin-right: 12%;
+}
+
+.result{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
